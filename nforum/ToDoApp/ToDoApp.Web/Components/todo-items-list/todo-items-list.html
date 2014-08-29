@@ -22,7 +22,7 @@
         </core-menu>
     </template>
     <script>
-        Polymer('todo-items-list', {
+        Polymer({
             response: [],
             handleAjaxResponse: function () {
                 this.fire("show-all", { items: this.response.toDoItems });
