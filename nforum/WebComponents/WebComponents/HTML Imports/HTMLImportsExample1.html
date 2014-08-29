@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML Imports example 1</title>
+    <link rel="import" href="Modules/TextHTML.html" />
+</head>
+<body>
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        var content = link.import;
+        var divElement = content.querySelector('div');
+
+        document.body.appendChild(divElement.cloneNode(true));
+    </script>
+</body>
+</html>

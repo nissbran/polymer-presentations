@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Template example 3</title>
+</head>
+<body>
+    <template id="myTemplate">
+        <style>
+            p {
+                /* This will bleed into the parent page*/
+                font-weight: bold;
+            }
+        </style>
+        <p>Hi, from my template</p>
+    </template>
+
+    <p>Press the button!</p>
+    <button onclick="onButtonClick()">Click for bold</button>
+    <button onclick="onShadowButtonClick()">Click for shadow bold</button>
+
+    <div id="container"></div>
+
+    <script>
+        function onButtonClick() {
+            var template = document.querySelector('#myTemplate');
+            
+            var clone = document.importNode(template.content, true);
+            document.querySelector('#container').appendChild(clone);
+        }
+        function onShadowButtonClick() {
+            var template = document.querySelector('#myTemplate');
+
+            var container = document.querySelector('#container');
+            var root = container.createShadowRoot();
+
+            var clone = document.importNode(template.content, true);
+            root.appendChild(clone);
+        }
+    </script>
+</body>
+</html>

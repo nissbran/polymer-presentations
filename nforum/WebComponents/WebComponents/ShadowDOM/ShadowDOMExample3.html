@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shadow DOM Example 3</title>
+    <style>
+        p { font-weight:bold}
+    </style>
+</head>
+<body>
+    <div id="firstDiv"></div>
+    <div>
+        <p>This is a paragraph</p>
+    </div>
+    <script>
+        var root = document.querySelector('#firstDiv').createShadowRoot();
+        /* :host selector selectes the shadow root host as styling target. In this case the div firstDiv. */
+        root.innerHTML = '<style>' +
+                            ':host { box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); ' +
+                                    'padding: 10px;}' +
+                            'h3{color:red; }' +
+                         '</style>' +
+                         '<h3>Shadow Dom</h3>' +
+                         '<p>This is a shadow DOM paragraph</p>';
+
+    </script>
+</body>
+</html>

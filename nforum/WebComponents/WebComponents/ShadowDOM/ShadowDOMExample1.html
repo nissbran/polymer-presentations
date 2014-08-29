@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h3>Light DOM</h3>
+    <div></div>
+    <script>
+        var root = document.querySelector('div').createShadowRoot();
+        root.innerHTML = '<style>h3{color:red; }</style> <h3>Shadow DOM h3</h3>';
+    </script>
+</body>
+</html>

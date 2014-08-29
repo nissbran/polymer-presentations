@@ -1,0 +1,42 @@
+﻿
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/google-map/google-map.html" />
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html" />
+
+<polymer-element name="todo-item" attributes="title todoDescription latitude longitude">
+    <template>
+        <link href="item.css" rel="stylesheet" />
+        <core-ajax id="itemDetailAjax" 
+                   handleas="json" 
+                   on-core-response="{{handleItemResponse}}" 
+                   response="{{response}}"></core-ajax>
+        <div id="card">
+            <div id="header">{{title}}</div>
+            <div id="content">{{description}}</div>
+            <google-map latitude="{{latitude}}" longitude="{{longitude}}" zoom="16">
+                <google-map-marker latitude="{{latitude}}" longitude="{{longitude}}" title="{{title}}">
+                </google-map-marker>
+            </google-map>
+        </div>
+    </template>
+    <script>
+        Polymer('todo-item', {
+            response: [],
+            title: 'Item title',
+            description: 'Item description',
+            latitude: 57.702567,
+            longitude: 11.963348,
+
+            changeData: function (id) {
+                this.$.itemDetailAjax.url = "../../api/items/" + id;
+                this.$.itemDetailAjax.go();
+            },
+            handleItemResponse: function () {
+                this.title = this.response.title;
+                this.description = this.response.description;
+                this.latitude = this.response.latitude;
+                this.longitude = this.response.longitude;
+            }
+        })
+    </script>
+</polymer-element>

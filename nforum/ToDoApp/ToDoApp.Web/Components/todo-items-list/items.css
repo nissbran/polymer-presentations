@@ -1,0 +1,13 @@
+﻿.item-menu-list core-item {
+  height: 56px;
+  padding-left: 60px;
+  font-size: 23px;
+  color: #444;
+}
+core-item.core-selected {
+  background-color: #dedede;
+}
+core-menu {
+  margin: 10px 0 0 0 !important;
+}
+/*# sourceMappingURL=items.css.map */

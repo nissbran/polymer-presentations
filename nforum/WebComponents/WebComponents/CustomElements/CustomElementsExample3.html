@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Custom elements example 3</title>
+</head>
+<body>
+    <!--This will display I'm an my-tag! in bold text-->
+    <my-tag></my-tag>
+    <script>
+        var myTagProto = Object.create(HTMLElement.prototype);
+
+        myTagProto.createdCallback = function () {
+            this.innerHTML = "<b>I'm an my-tag!</b>";
+        };
+
+        document.registerElement('my-tag', { prototype: myTagProto });
+    </script>
+</body>
+</html>

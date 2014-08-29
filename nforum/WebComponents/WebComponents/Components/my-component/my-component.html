@@ -1,0 +1,24 @@
+﻿<template id="mycomponenttemplate">
+    <style> h2 {color: green;} </style>
+    <h2>This is my-component header h2 with green text</h2>
+</template>
+<script>
+    var proto = Object.create(HTMLElement.prototype);
+
+    // This document: my-component.html
+    var thisDocument = document.currentScript.ownerDocument;
+
+    // The document that imports the component: ComponentsIndex.html
+    var importerDocument = document;
+
+    // Find the template in this document
+    var template = thisDocument.querySelector('#mycomponenttemplate');
+
+    proto.createdCallback = function () {
+        var root = this.createShadowRoot();
+        var templateInstance = importerDocument.importNode(template.content, true);
+        root.appendChild(templateInstance);
+    };
+
+    document.registerElement('my-component', { prototype: proto });
+</script>

@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Custom elements example 1</title>
+</head>
+<body>
+    <my-tag></my-tag>
+    <script>
+        var my_tag = document.registerElement('my-tag');
+        document.body.appendChild(new my_tag());
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/google-map/google-map.html" />
+
+<polymer-element name="show-all-items">
+    <template>
+        <link href="showAll.css" rel="stylesheet" />
+        <div id="card">
+            <div id="header">Shows all to do items on the map</div>
+            <google-map zoom="16" fittomarkers>
+                <template repeat="{{item in items}}">
+                    <google-map-marker latitude="{{item.latitude}}" longitude="{{item.longitude}}" title="{{item.title}}">
+                        <h2>{{item.title}}</h2>
+                        <p>{{item.description}}</p>
+                    </google-map-marker>
+                </template>
+            </google-map>
+        </div>
+    </template>
+    <script>
+        Polymer('show-all-items', {
+            items: [],
+            showAllItemsOnMap: function(itemList)
+            {
+                this.items = itemList;
+            }
+        })
+    </script>
+</polymer-element>

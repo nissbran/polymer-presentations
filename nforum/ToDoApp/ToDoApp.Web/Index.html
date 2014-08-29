@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToDo test app</title>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html" />
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html" />
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html" />
+    <link rel="import" href="bower_components/core-pages/core-pages.html" />
+    <link rel="import" href="Components/show-all-items/show-all-items.html" />
+    <link rel="import" href="Components/todo-items-list/todo-items-list.html" />
+    <link rel="import" href="Components/todo-item/todo-item.html" />
+    <link href="css/ToDoStyles.css" rel="stylesheet" />
+</head>
+<body unresolved>
+    <core-drawer-panel id="drawer-panel" drawerwidth="320px" selected="main">
+
+        <core-header-panel drawer>
+            <core-toolbar class="medium-tall">
+                <div class="bottom list-header">
+                    To do list
+                </div>
+            </core-toolbar>
+            <todo-items-list></todo-items-list>
+        </core-header-panel>
+
+        <core-header-panel main mode="cover" shadow>
+            <core-toolbar class="medium-tall"></core-toolbar>
+            <core-pages id="pages" selected="0">
+                <show-all-items></show-all-items>
+                <todo-item></todo-item>
+            </core-pages>
+        </core-header-panel>
+    </core-drawer-panel>
+    <script>
+        var todoItemsList = document.querySelector('todo-items-list');
+        var pages = document.querySelector('#pages');
+
+        todoItemsList.addEventListener('show-all', function (e) {
+            pages.selected = 0;
+
+            var showAll = document.querySelector('show-all-items');
+            showAll.showAllItemsOnMap(e.detail.items);
+        });
+        todoItemsList.addEventListener('item-changed', function (e) {
+            console.log(e.type, e.detail.id);
+            pages.selected = 1;
+
+            var todoItem = document.querySelector('todo-item');
+            todoItem.changeData(e.detail.id);
+        });
+    </script>
+</body>
+</html>

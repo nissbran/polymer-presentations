@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Custom elements example 2</title>
+</head>
+<body>
+    <my-tag></my-tag>
+    <my-tag2></my-tag2>
+    <script>
+        // This will cast an exception in for browsers that havent implemented custom elements
+        document.registerElement('my-tag');
+
+        // And these will be HTMLUnknownElement
+        // On a webbrowser that supports custom elements they will be derived from HTMLElement
+        var knownElement = document.querySelector('my-tag'); // This will show my-tag as the element type
+        var unknownElement = document.querySelector('my-tag2'); // This will show HTMLElement as the element type
+    </script>
+</body>
+</html>

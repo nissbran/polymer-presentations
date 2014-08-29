@@ -1,0 +1,40 @@
+﻿
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html" />
+<link rel="import" href="../../bower_components/core-menu/core-menu.html" />
+<link rel="import" href="../../bower_components/core-menu/core-submenu.html" />
+
+<polymer-element name="todo-items-list">
+    <template>
+        <link href="items.css" rel="stylesheet" />
+        <core-ajax auto
+                   url="../../api/user/1"
+                   on-core-response="{{handleAjaxResponse}}"
+                   response="{{response}}"
+                   handleas="json">
+        </core-ajax>
+
+        <core-menu id="item_list" class="item-menu-list" selected="0">
+            <core-item label="Visa alla" on-tap="{{onShowAll}}"></core-item>
+            <template repeat="{{item in response.toDoItems}}">
+                <core-item on-tap="{{onTitleTap}}" label="{{item.title}}"></core-item>
+            </template>
+        </core-menu>
+    </template>
+    <script>
+        Polymer('todo-items-list', {
+            response: [],
+            handleAjaxResponse: function () {
+                this.fire("show-all", { items: this.response.toDoItems });
+            },
+            onShowAll: function (event, detail, sender) {
+                this.fire("show-all", { items: this.response.toDoItems });
+            },
+            onTitleTap: function (event, detail, sender) {
+                this.fire("item-changed", {
+                    id: sender.templateInstance.model.item.id
+                });
+            }
+        })
+    </script>
+</polymer-element>

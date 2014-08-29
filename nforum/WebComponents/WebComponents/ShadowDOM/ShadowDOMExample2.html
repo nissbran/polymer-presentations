@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shadow DOM Example 2</title>
+    <style>
+        h3 { color:green; }
+        /*  This is the new ::shadow selector
+            Works like this, 
+                for each div element with a shadow root 
+                set styling for h3 within that shadow scope
+            just uncomment for it to work
+        */
+        div::shadow h3 { color: ActiveCaption;}
+        
+        /*  This is the /deep/ selector
+            Works like this, 
+                for each div element
+                set styling for all h2 no matter deepth in structure
+            just uncomment for it to work
+        */
+        div /deep/ h2 { color:blanchedalmond;}
+    </style>
+</head>
+<body>
+    <h3>Header h3</h3>
+
+    <div id="firstDiv"></div>
+    <div id="secondDiv"></div>
+
+    <div>
+        <h2>Light DOM h2</h2>
+        <p>
+            <h2>Light DOM p h2</h2>
+        </p>
+    </div>
+
+    <script>
+        var root = document.querySelector('#firstDiv').createShadowRoot();
+        root.innerHTML = '<style>h3{color:red; }</style> <h3>Shadow Dom h3</h3>';
+        var root = document.querySelector('#secondDiv').createShadowRoot();
+        root.innerHTML = '<style>h4{color:blue; }</style> <h4>Shadow Dom h4</h4>';
+    </script>
+</body>
+</html>

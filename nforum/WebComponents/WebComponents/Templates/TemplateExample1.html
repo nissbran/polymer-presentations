@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Template example 1</title>
+</head>
+<body>
+    <!--This template wont render until the script runs-->
+    <template id="myTemplate">
+        <p>This is a template</p>
+        <img src="" alt="nforum"/>
+    </template>
+    <script>
+        var templateRef = document.querySelector("#myTemplate");
+        templateRef.content.querySelector("img").src = "imgs/logo-small.png";
+
+        var instanceOfTemplate = document.importNode(templateRef.content, true);
+        document.body.appendChild(instanceOfTemplate);
+    </script>
+</body>
+</html>
