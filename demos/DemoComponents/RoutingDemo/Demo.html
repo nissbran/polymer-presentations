@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Routing/Scaffold demo 1</title>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-icons/notification-icons.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
+    <link rel="import" href="bower_components/core-menu/core-submenu.html" />
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-pages/core-pages.html" />
+    <link rel="import" href="bower_components/flatiron-director/flatiron-director.html">
+
+    <style>
+        core-item {
+            cursor: pointer !important;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px 15px 30px 20px;
+        }
+
+            .content p {
+                margin-bottom: 30px;
+            }
+
+        core-scaffold::shadow core-header-panel {
+            background-color: white;
+        }
+
+        core-submenu::shadow #submenu {
+            margin: 0 0 0 20px;
+        }
+    </style>
+</head>
+<body unresolved>
+    <template is="auto-binding">
+
+        <flatiron-director route="{{route}}"
+                           autohash
+                           on-director-route="{{routeChanged}}"></flatiron-director>
+
+        <core-scaffold mode="waterfall">
+            <core-header-panel navigation flex mode="seamed" shadow>
+                <core-toolbar>Event viewer</core-toolbar>
+                <core-menu theme="core-light-theme">
+                    <core-item icon="home"
+                               label="Home"
+                               active?="{{route == 'home'}}"
+                               class="{{ {'core-selected' : route == 'home'} | tokenList }}">
+                        <a href="#home"></a>
+                    </core-item>
+                    <core-submenu icon="event" label="Events">
+                        <template repeat="{{event in events}}">
+                            <core-item icon="notification:event-note"
+                                       label="{{event.title}}"
+                                       active?="{{route == event.pageHash}}"
+                                       class="{{ {'core-selected' : route == event.pageHash} | tokenList }}">
+                                <a href="#{{event.pageHash}}"></a>
+                            </core-item>
+                        </template>
+                    </core-submenu>
+                </core-menu>
+            </core-header-panel>
+            <div tool class="core-header">
+                <h3>{{headerTitle}}</h3>
+            </div>
+            <core-pages selected="{{route}}" valueattr="hash">
+                <div hash="home">
+                    <div class="content">
+                        This is home
+                    </div>
+                </div>
+                <template repeat="{{event in events}}">
+                    <div hash="{{event.pageHash}}">
+                        <div class="content">
+                            <img src="{{event.imgsrc}}" />
+                            <p>{{event.description}}</p>
+                        </div>
+                    </div>
+                </template>
+            </core-pages>
+        </core-scaffold>
+    </template>
+    <script>
+        addEventListener('template-bound', function (e) {
+            var scope = e.target;
+            var events = [
+                {
+                    id: 1,
+                    title: "Gokart",
+                    description: "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                    imgsrc: "images/gokart.jpg",
+                    pageHash: "event_1",
+                },
+                {
+                    id: 2,
+                    title: "Midsommar",
+                    description: "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                    imgsrc: "images/midsommar.jpg",
+                    pageHash: "event_2",
+                }
+            ];
+            scope.events = events;
+            scope.headerTitle = "Home";
+            scope.route = "home";
+
+            scope.routeChanged = function (e) {
+
+                if (e.detail == "home") {
+                    scope.headerTitle = "Home";
+                }
+                else {
+                    for (var i = 0; i < scope.events.length; i++) {
+                        var event = scope.events[i];
+                        if (event.pageHash == e.detail) {
+                            scope.headerTitle = event.title;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

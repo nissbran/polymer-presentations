@@ -4,9 +4,16 @@
     <title></title>
     <script src="bower_components/platform/platform.js"></script>
     <link rel="import" href="my-component/my-component.html" />
+    <link rel="import" href="my-data-component/my-data-component.html" />
 </head>
 <body>
     <h2>This is a header</h2>
     <my-component></my-component>
+    <my-data-component list="['tests']"></my-data-component>
+    <script>
+        var dataComponent = document.querySelector('my-data-component');
+
+        dataComponent.list = ["hej", "test"]
+    </script>
 </body>
 </html>

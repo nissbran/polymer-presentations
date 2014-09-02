@@ -1,0 +1,41 @@
+﻿<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-ajax/core-ajax.html" />
+
+<polymer-element name="my-data-component" attributes="customerid">
+    <template>
+        <core-ajax id="ajaxGet"
+                   auto="false"
+                   method="GET"
+                   url="api/customers/{{customerid}}"
+                   response="{{customerData}}"
+                   handleas="json">
+        </core-ajax>
+        <core-ajax id="ajaxPost"
+                   auto="false"
+                   method="POST"
+                   url="api/customers/{{customerid}}"
+                   contenttype="application/json">
+        </core-ajax>
+        <p>
+            Name: {{customerData.name}}
+        </p>
+        <p>
+            Email: {{customerData.email}}
+        </p>
+        <button on-tap="{{onSave}}">Save</button>
+    </template>
+    <script>
+        Polymer({
+            customerData: [],
+            customerid: -1,
+            customeridChanged: function () {
+                this.$.ajaxGet.go();
+            },
+            onSave: function () {
+                this.customerData.name = "new customer name for " + this.customerid;
+                this.$.ajaxPost.body = JSON.stringify(this.customerData);
+                this.$.ajaxPost.go();
+            }
+        })
+    </script>
+</polymer-element>

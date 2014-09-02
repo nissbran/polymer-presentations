@@ -1,0 +1,23 @@
+﻿
+<link rel="import" href="../my-component/my-component.html" />
+<polymer-element name="my-data-component" attributes="list" extends="my-component">
+    <template>
+        <style>
+            p {
+                color: red;
+            }
+        </style>
+        <shadow></shadow>
+        <h2>This is my-data-component in polymer</h2>
+        <template repeat="{{item in list}}">
+            <p>
+                {{item}}
+            </p>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            list: [],
+        })
+    </script>
+</polymer-element>

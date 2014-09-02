@@ -1,0 +1,26 @@
+{
+  "name": "AnimatedPagesDemo",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nissbran/polymer-presentations",
+  "authors": [
+    "Kristofer Nissbrandt <kristofer.nissbrandt@squeed.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-component-page": "Polymer/core-component-page#>=0.4.0 <1.0.0",
+    "polymer": "Polymer/polymer#~0.4.0",
+    "paper-elements": "Polymer/paper-elements#~0.4.0",
+    "core-animated-pages": "Polymer/core-animated-pages#~0.4.0",
+    "core-scaffold": "Polymer/core-scaffold#~0.4.0",
+    "flatiron-director": "polymerlabs/flatiron-director#~0.4.0",
+    "core-pages": "Polymer/core-pages#~0.4.0"
+  }
+}

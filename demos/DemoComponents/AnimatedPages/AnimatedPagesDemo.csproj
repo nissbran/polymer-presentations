@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31F03A26-B44A-4C62-9B49-8DDB2DFE18D5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnimatedPages</RootNamespace>
+    <AssemblyName>AnimatedPages</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower.json" />
+    <Content Include="bower_components\core-animated-pages\.bower.json" />
+    <Content Include="bower_components\core-animated-pages\bower.json" />
+    <Content Include="bower_components\core-animated-pages\README.md" />
+    <Content Include="bower_components\core-animation\.bower.json" />
+    <Content Include="bower_components\core-animation\bower.json" />
+    <Content Include="bower_components\core-animation\README.md" />
+    <Content Include="bower_components\core-collapse\.bower.json" />
+    <Content Include="bower_components\core-collapse\bower.json" />
+    <Content Include="bower_components\core-collapse\README.md" />
+    <Content Include="bower_components\core-component-page\.bower.json" />
+    <Content Include="bower_components\core-component-page\bower.json" />
+    <Content Include="bower_components\core-component-page\README.md" />
+    <Content Include="bower_components\core-drawer-panel\.bower.json" />
+    <Content Include="bower_components\core-drawer-panel\bower.json" />
+    <Content Include="bower_components\core-drawer-panel\README.md" />
+    <Content Include="bower_components\core-field\.bower.json" />
+    <Content Include="bower_components\core-field\bower.json" />
+    <Content Include="bower_components\core-field\README.md" />
+    <Content Include="bower_components\core-header-panel\.bower.json" />
+    <Content Include="bower_components\core-header-panel\bower.json" />
+    <Content Include="bower_components\core-header-panel\README.md" />
+    <Content Include="bower_components\core-icon-button\.bower.json" />
+    <Content Include="bower_components\core-icon-button\bower.json" />
+    <Content Include="bower_components\core-icon-button\README.md" />
+    <Content Include="bower_components\core-iconset-svg\.bower.json" />
+    <Content Include="bower_components\core-iconset-svg\bower.json" />
+    <Content Include="bower_components\core-iconset-svg\README.md" />
+    <Content Include="bower_components\core-iconset\.bower.json" />
+    <Content Include="bower_components\core-iconset\bower.json" />
+    <Content Include="bower_components\core-iconset\README.md" />
+    <Content Include="bower_components\core-icons\.bower.json" />
+    <Content Include="bower_components\core-icons\bower.json" />
+    <Content Include="bower_components\core-icons\README.md" />
+    <Content Include="bower_components\core-icon\.bower.json" />
+    <Content Include="bower_components\core-icon\bower.json" />
+    <Content Include="bower_components\core-icon\README.md" />
+    <Content Include="bower_components\core-input\.bower.json" />
+    <Content Include="bower_components\core-input\bower.json" />
+    <Content Include="bower_components\core-input\README.md" />
+    <Content Include="bower_components\core-item\.bower.json" />
+    <Content Include="bower_components\core-item\bower.json" />
+    <Content Include="bower_components\core-item\README.md" />
+    <Content Include="bower_components\core-media-query\.bower.json" />
+    <Content Include="bower_components\core-media-query\bower.json" />
+    <Content Include="bower_components\core-media-query\README.md" />
+    <Content Include="bower_components\core-menu\.bower.json" />
+    <Content Include="bower_components\core-menu\bower.json" />
+    <Content Include="bower_components\core-menu\README.md" />
+    <Content Include="bower_components\core-meta\.bower.json" />
+    <Content Include="bower_components\core-meta\bower.json" />
+    <Content Include="bower_components\core-meta\README.md" />
+    <Content Include="bower_components\core-overlay\.bower.json" />
+    <Content Include="bower_components\core-overlay\bower.json" />
+    <Content Include="bower_components\core-overlay\README.md" />
+    <Content Include="bower_components\core-pages\.bower.json" />
+    <Content Include="bower_components\core-pages\bower.json" />
+    <Content Include="bower_components\core-pages\README.md" />
+    <Content Include="bower_components\core-popup-menu\.bower.json" />
+    <Content Include="bower_components\core-popup-menu\bower.json" />
+    <Content Include="bower_components\core-popup-menu\README.md" />
+    <Content Include="bower_components\core-range\.bower.json" />
+    <Content Include="bower_components\core-range\bower.json" />
+    <Content Include="bower_components\core-range\README.md" />
+    <Content Include="bower_components\core-scaffold\.bower.json" />
+    <Content Include="bower_components\core-scaffold\bower.json" />
+    <Content Include="bower_components\core-scaffold\README.md" />
+    <Content Include="bower_components\core-scroll-header-panel\.bower.json" />
+    <Content Include="bower_components\core-scroll-header-panel\bower.json" />
+    <Content Include="bower_components\core-scroll-header-panel\README.md" />
+    <Content Include="bower_components\core-selection\.bower.json" />
+    <Content Include="bower_components\core-selection\bower.json" />
+    <Content Include="bower_components\core-selection\README.md" />
+    <Content Include="bower_components\core-selector\.bower.json" />
+    <Content Include="bower_components\core-selector\bower.json" />
+    <Content Include="bower_components\core-selector\README.md" />
+    <Content Include="bower_components\core-style\.bower.json" />
+    <Content Include="bower_components\core-style\bower.json" />
+    <Content Include="bower_components\core-style\README.md" />
+    <Content Include="bower_components\core-toolbar\.bower.json" />
+    <Content Include="bower_components\core-toolbar\bower.json" />
+    <Content Include="bower_components\core-toolbar\README.md" />
+    <Content Include="bower_components\core-transition\.bower.json" />
+    <Content Include="bower_components\core-transition\bower.json" />
+    <Content Include="bower_components\core-transition\README.md" />
+    <Content Include="bower_components\flatiron-director\.bower.json" />
+    <Content Include="bower_components\flatiron-director\AUTHORS" />
+    <Content Include="bower_components\flatiron-director\bower.json" />
+    <Content Include="bower_components\flatiron-director\CONTRIBUTING.md" />
+    <Content Include="bower_components\flatiron-director\director\LICENSE" />
+    <Content Include="bower_components\flatiron-director\LICENSE" />
+    <Content Include="bower_components\flatiron-director\PATENTS" />
+    <Content Include="bower_components\font-roboto\.bower.json" />
+    <Content Include="bower_components\paper-button\.bower.json" />
+    <Content Include="bower_components\paper-button\bower.json" />
+    <Content Include="bower_components\paper-button\README.md" />
+    <Content Include="bower_components\paper-checkbox\.bower.json" />
+    <Content Include="bower_components\paper-checkbox\bower.json" />
+    <Content Include="bower_components\paper-checkbox\README.md" />
+    <Content Include="bower_components\paper-dialog\.bower.json" />
+    <Content Include="bower_components\paper-dialog\bower.json" />
+    <Content Include="bower_components\paper-dialog\README.md" />
+    <Content Include="bower_components\paper-dropdown\.bower.json" />
+    <Content Include="bower_components\paper-dropdown\bower.json" />
+    <Content Include="bower_components\paper-dropdown\README.md" />
+    <Content Include="bower_components\paper-elements\.bower.json" />
+    <Content Include="bower_components\paper-elements\bower.json" />
+    <Content Include="bower_components\paper-elements\README.md" />
+    <Content Include="bower_components\paper-fab\.bower.json" />
+    <Content Include="bower_components\paper-fab\bower.json" />
+    <Content Include="bower_components\paper-fab\README.md" />
+    <Content Include="bower_components\paper-focusable\.bower.json" />
+    <Content Include="bower_components\paper-focusable\bower.json" />
+    <Content Include="bower_components\paper-focusable\README.md" />
+    <Content Include="bower_components\paper-icon-button\.bower.json" />
+    <Content Include="bower_components\paper-icon-button\bower.json" />
+    <Content Include="bower_components\paper-icon-button\README.md" />
+    <Content Include="bower_components\paper-input\.bower.json" />
+    <Content Include="bower_components\paper-input\bower.json" />
+    <Content Include="bower_components\paper-input\README.md" />
+    <Content Include="bower_components\paper-item\.bower.json" />
+    <Content Include="bower_components\paper-item\bower.json" />
+    <Content Include="bower_components\paper-item\README.md" />
+    <Content Include="bower_components\paper-menu-button\.bower.json" />
+    <Content Include="bower_components\paper-menu-button\bower.json" />
+    <Content Include="bower_components\paper-menu-button\README.md" />
+    <Content Include="bower_components\paper-progress\.bower.json" />
+    <Content Include="bower_components\paper-progress\bower.json" />
+    <Content Include="bower_components\paper-progress\README.md" />
+    <Content Include="bower_components\paper-radio-button\.bower.json" />
+    <Content Include="bower_components\paper-radio-button\bower.json" />
+    <Content Include="bower_components\paper-radio-button\README.md" />
+    <Content Include="bower_components\paper-radio-group\.bower.json" />
+    <Content Include="bower_components\paper-radio-group\bower.json" />
+    <Content Include="bower_components\paper-radio-group\README.md" />
+    <Content Include="bower_components\paper-ripple\.bower.json" />
+    <Content Include="bower_components\paper-ripple\bower.json" />
+    <Content Include="bower_components\paper-ripple\README.md" />
+    <Content Include="bower_components\paper-shadow\.bower.json" />
+    <Content Include="bower_components\paper-shadow\bower.json" />
+    <Content Include="bower_components\paper-shadow\README.md" />
+    <Content Include="bower_components\paper-slider\.bower.json" />
+    <Content Include="bower_components\paper-slider\bower.json" />
+    <Content Include="bower_components\paper-slider\README.md" />
+    <Content Include="bower_components\paper-tabs\.bower.json" />
+    <Content Include="bower_components\paper-tabs\bower.json" />
+    <Content Include="bower_components\paper-tabs\README.md" />
+    <Content Include="bower_components\paper-toast\.bower.json" />
+    <Content Include="bower_components\paper-toast\bower.json" />
+    <Content Include="bower_components\paper-toast\README.md" />
+    <Content Include="bower_components\paper-toggle-button\.bower.json" />
+    <Content Include="bower_components\paper-toggle-button\bower.json" />
+    <Content Include="bower_components\paper-toggle-button\README.md" />
+    <Content Include="bower_components\platform\.bower.json" />
+    <Content Include="bower_components\platform\bower.json" />
+    <Content Include="bower_components\platform\build.log" />
+    <Content Include="bower_components\platform\platform.js.map" />
+    <Content Include="bower_components\platform\README.md" />
+    <Content Include="bower_components\polymer\.bower.json" />
+    <Content Include="bower_components\polymer\bower.json" />
+    <Content Include="bower_components\polymer\build.log" />
+    <Content Include="bower_components\polymer\polymer.js.map" />
+    <Content Include="bower_components\polymer\README.md" />
+    <Content Include="bower_components\sampler-scaffold\.bower.json" />
+    <Content Include="bower_components\sampler-scaffold\bower.json" />
+    <Content Include="bower_components\sampler-scaffold\README.md" />
+    <Content Include="bower_components\web-animations-js\.bower.json" />
+    <Content Include="bower_components\web-animations-js\.testr.conf" />
+    <Content Include="bower_components\web-animations-js\.travis-run.sh" />
+    <Content Include="bower_components\web-animations-js\.travis-setup.sh" />
+    <Content Include="bower_components\web-animations-js\.travis.yml" />
+    <Content Include="bower_components\web-animations-js\COPYING" />
+    <Content Include="bower_components\web-animations-js\README.md" />
+    <Content Include="bower_components\web-animations-js\run-lint.sh" />
+    <Content Include="bower_components\web-animations-js\run-tests-android.sh" />
+    <Content Include="bower_components\web-animations-js\run-tests.sh" />
+    <Content Include="bower_components\web-animations-js\test\testcases\small.webm" />
+    <Content Include="bower_components\web-animations-js\test\update-testcases.py" />
+    <Content Include="bower_components\web-animations-js\tools\.keepme" />
+    <Content Include="bower_components\web-animations-js\tools\android\config.sh" />
+    <Content Include="bower_components\web-animations-js\tools\android\setup.sh" />
+    <Content Include="bower_components\web-animations-js\tools\android\stop.sh" />
+    <Content Include="bower_components\web-animations-js\tools\python\run-tests.py" />
+    <Content Include="bower_components\web-animations-js\tools\python\setup.sh" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower_components\core-animated-pages\core-animated-pages.css" />
+    <Content Include="bower_components\core-animated-pages\core-animated-pages.html" />
+    <Content Include="bower_components\core-animated-pages\demo.html" />
+    <Content Include="bower_components\core-animated-pages\demos\grid.html" />
+    <Content Include="bower_components\core-animated-pages\demos\list.html" />
+    <Content Include="bower_components\core-animated-pages\demos\music.html" />
+    <Content Include="bower_components\core-animated-pages\demos\nested-animated-pages.html" />
+    <Content Include="bower_components\core-animated-pages\demos\nested.html" />
+    <Content Include="bower_components\core-animated-pages\demos\news.html" />
+    <Content Include="bower_components\core-animated-pages\demos\quiz1-intro.png" />
+    <Content Include="bower_components\core-animated-pages\demos\quiz1.html" />
+    <Content Include="bower_components\core-animated-pages\demos\shadow.html" />
+    <Content Include="bower_components\core-animated-pages\demos\simple.html" />
+    <Content Include="bower_components\core-animated-pages\index.html" />
+    <Content Include="bower_components\core-animated-pages\metadata.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\cascade-transition.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\core-transition-pages.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\cross-fade.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\hero-transition.css" />
+    <Content Include="bower_components\core-animated-pages\transitions\hero-transition.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\list-cascade.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\scale-up.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\slide-down.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\slide-from-bottom.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\slide-from-right.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\slide-up.html" />
+    <Content Include="bower_components\core-animated-pages\transitions\tile-cascade.html" />
+    <Content Include="bower_components\core-animation\core-animation-group.html" />
+    <Content Include="bower_components\core-animation\core-animation.html" />
+    <Content Include="bower_components\core-animation\demo.html" />
+    <Content Include="bower_components\core-animation\index.html" />
+    <Content Include="bower_components\core-animation\web-animations.html" />
+    <Content Include="bower_components\core-collapse\core-collapse.css" />
+    <Content Include="bower_components\core-collapse\core-collapse.html" />
+    <Content Include="bower_components\core-collapse\demo.html" />
+    <Content Include="bower_components\core-collapse\index.html" />
+    <Content Include="bower_components\core-component-page\bowager-logo.png" />
+    <Content Include="bower_components\core-component-page\core-component-page.html" />
+    <Content Include="bower_components\core-component-page\demo.html" />
+    <Content Include="bower_components\core-component-page\index.html" />
+    <Content Include="bower_components\core-drawer-panel\core-drawer-panel.css" />
+    <Content Include="bower_components\core-drawer-panel\core-drawer-panel.html" />
+    <Content Include="bower_components\core-drawer-panel\demo.html" />
+    <Content Include="bower_components\core-drawer-panel\index.html" />
+    <Content Include="bower_components\core-drawer-panel\metadata.html" />
+    <Content Include="bower_components\core-field\core-field.css" />
+    <Content Include="bower_components\core-field\core-field.html" />
+    <Content Include="bower_components\core-field\demo.html" />
+    <Content Include="bower_components\core-field\index.html" />
+    <Content Include="bower_components\core-field\metadata.html" />
+    <Content Include="bower_components\core-header-panel\core-header-panel.css" />
+    <Content Include="bower_components\core-header-panel\core-header-panel.html" />
+    <Content Include="bower_components\core-header-panel\demo.html" />
+    <Content Include="bower_components\core-header-panel\index.html" />
+    <Content Include="bower_components\core-header-panel\metadata.html" />
+    <Content Include="bower_components\core-icon-button\core-icon-button.css" />
+    <Content Include="bower_components\core-icon-button\core-icon-button.html" />
+    <Content Include="bower_components\core-icon-button\demo.html" />
+    <Content Include="bower_components\core-icon-button\index.html" />
+    <Content Include="bower_components\core-icon-button\metadata.html" />
+    <Content Include="bower_components\core-iconset-svg\core-iconset-svg.html" />
+    <Content Include="bower_components\core-iconset-svg\demo.html" />
+    <Content Include="bower_components\core-iconset-svg\index.html" />
+    <Content Include="bower_components\core-iconset-svg\svg-sample-icons.html" />
+    <Content Include="bower_components\core-iconset\core-iconset.html" />
+    <Content Include="bower_components\core-iconset\demo.html" />
+    <Content Include="bower_components\core-iconset\index.html" />
+    <Content Include="bower_components\core-iconset\my-icons-big.png" />
+    <Content Include="bower_components\core-iconset\my-icons.png" />
+    <Content Include="bower_components\core-icons\av-icons.html" />
+    <Content Include="bower_components\core-icons\communication-icons.html" />
+    <Content Include="bower_components\core-icons\core-icons.html" />
+    <Content Include="bower_components\core-icons\demo.html" />
+    <Content Include="bower_components\core-icons\device-icons.html" />
+    <Content Include="bower_components\core-icons\editor-icons.html" />
+    <Content Include="bower_components\core-icons\hardware-icons.html" />
+    <Content Include="bower_components\core-icons\image-icons.html" />
+    <Content Include="bower_components\core-icons\index.html" />
+    <Content Include="bower_components\core-icons\maps-icons.html" />
+    <Content Include="bower_components\core-icons\notification-icons.html" />
+    <Content Include="bower_components\core-icons\png-icons.html" />
+    <Content Include="bower_components\core-icons\social-icons.html" />
+    <Content Include="bower_components\core-icon\core-icon.css" />
+    <Content Include="bower_components\core-icon\core-icon.html" />
+    <Content Include="bower_components\core-icon\demo.html" />
+    <Content Include="bower_components\core-icon\index.html" />
+    <Content Include="bower_components\core-icon\metadata.html" />
+    <Content Include="bower_components\core-input\core-input.css" />
+    <Content Include="bower_components\core-input\core-input.html" />
+    <Content Include="bower_components\core-input\demo.html" />
+    <Content Include="bower_components\core-input\index.html" />
+    <Content Include="bower_components\core-input\metadata.html" />
+    <Content Include="bower_components\core-item\core-item.css" />
+    <Content Include="bower_components\core-item\core-item.html" />
+    <Content Include="bower_components\core-item\demo.html" />
+    <Content Include="bower_components\core-item\index.html" />
+    <Content Include="bower_components\core-item\metadata.html" />
+    <Content Include="bower_components\core-media-query\core-media-query.html" />
+    <Content Include="bower_components\core-media-query\demo.html" />
+    <Content Include="bower_components\core-media-query\index.html" />
+    <Content Include="bower_components\core-menu\core-menu.css" />
+    <Content Include="bower_components\core-menu\core-menu.html" />
+    <Content Include="bower_components\core-menu\core-submenu.css" />
+    <Content Include="bower_components\core-menu\core-submenu.html" />
+    <Content Include="bower_components\core-menu\demo.html" />
+    <Content Include="bower_components\core-menu\index.html" />
+    <Content Include="bower_components\core-menu\metadata.html" />
+    <Content Include="bower_components\core-meta\core-meta.html" />
+    <Content Include="bower_components\core-meta\demo.html" />
+    <Content Include="bower_components\core-meta\index.html" />
+    <Content Include="bower_components\core-overlay\core-key-helper.html" />
+    <Content Include="bower_components\core-overlay\core-overlay-layer.html" />
+    <Content Include="bower_components\core-overlay\core-overlay.html" />
+    <Content Include="bower_components\core-overlay\demo.html" />
+    <Content Include="bower_components\core-overlay\index.html" />
+    <Content Include="bower_components\core-pages\core-pages.css" />
+    <Content Include="bower_components\core-pages\core-pages.html" />
+    <Content Include="bower_components\core-pages\demo.html" />
+    <Content Include="bower_components\core-pages\index.html" />
+    <Content Include="bower_components\core-pages\metadata.html" />
+    <Content Include="bower_components\core-popup-menu\core-popup-menu.css" />
+    <Content Include="bower_components\core-popup-menu\core-popup-menu.html" />
+    <Content Include="bower_components\core-popup-menu\core-popup-overlay.html" />
+    <Content Include="bower_components\core-popup-menu\demo.html" />
+    <Content Include="bower_components\core-popup-menu\index.html" />
+    <Content Include="bower_components\core-popup-menu\metadata.html" />
+    <Content Include="bower_components\core-range\core-range.html" />
+    <Content Include="bower_components\core-range\demo.html" />
+    <Content Include="bower_components\core-range\index.html" />
+    <Content Include="bower_components\core-scaffold\core-scaffold.html" />
+    <Content Include="bower_components\core-scaffold\demo.html" />
+    <Content Include="bower_components\core-scaffold\index.html" />
+    <Content Include="bower_components\core-scaffold\metadata.html" />
+    <Content Include="bower_components\core-scroll-header-panel\core-scroll-header-panel.css" />
+    <Content Include="bower_components\core-scroll-header-panel\core-scroll-header-panel.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demo.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo1.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo2.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo3.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo4.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo5.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo6.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo7.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo8.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\demo9.html" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\images\bg2.jpg" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\images\bg3.jpg" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\images\bg5.jpg" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\images\bg6.jpg" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\images\bg9.jpg" />
+    <Content Include="bower_components\core-scroll-header-panel\demos\lorem-ipsum.html" />
+    <Content Include="bower_components\core-scroll-header-panel\index.html" />
+    <Content Include="bower_components\core-scroll-header-panel\metadata.html" />
+    <Content Include="bower_components\core-selection\core-selection.html" />
+    <Content Include="bower_components\core-selection\demo.html" />
+    <Content Include="bower_components\core-selection\index.html" />
+    <Content Include="bower_components\core-selector\core-selector.html" />
+    <Content Include="bower_components\core-selector\demo.html" />
+    <Content Include="bower_components\core-selector\index.html" />
+    <Content Include="bower_components\core-selector\metadata.html" />
+    <Content Include="bower_components\core-style\core-style.html" />
+    <Content Include="bower_components\core-style\demo.html" />
+    <Content Include="bower_components\core-style\elements.html" />
+    <Content Include="bower_components\core-style\index.html" />
+    <Content Include="bower_components\core-style\my-theme.html" />
+    <Content Include="bower_components\core-toolbar\core-toolbar.css" />
+    <Content Include="bower_components\core-toolbar\core-toolbar.html" />
+    <Content Include="bower_components\core-toolbar\demo.html" />
+    <Content Include="bower_components\core-toolbar\index.html" />
+    <Content Include="bower_components\core-toolbar\metadata.html" />
+    <Content Include="bower_components\core-transition\core-transition-css.html" />
+    <Content Include="bower_components\core-transition\core-transition-overlay.css" />
+    <Content Include="bower_components\core-transition\core-transition.html" />
+    <Content Include="bower_components\core-transition\demo.html" />
+    <Content Include="bower_components\core-transition\index.html" />
+    <Content Include="bower_components\flatiron-director\demo.html" />
+    <Content Include="bower_components\flatiron-director\director\director.min.js" />
+    <Content Include="bower_components\flatiron-director\flatiron-director.html" />
+    <Content Include="bower_components\flatiron-director\index.html" />
+    <Content Include="bower_components\font-roboto\roboto.html" />
+    <Content Include="bower_components\paper-button\demo.html" />
+    <Content Include="bower_components\paper-button\demo2.html" />
+    <Content Include="bower_components\paper-button\index.html" />
+    <Content Include="bower_components\paper-button\metadata.html" />
+    <Content Include="bower_components\paper-button\paper-button.css" />
+    <Content Include="bower_components\paper-button\paper-button.html" />
+    <Content Include="bower_components\paper-checkbox\demo.html" />
+    <Content Include="bower_components\paper-checkbox\index.html" />
+    <Content Include="bower_components\paper-checkbox\metadata.html" />
+    <Content Include="bower_components\paper-checkbox\paper-checkbox.css" />
+    <Content Include="bower_components\paper-checkbox\paper-checkbox.html" />
+    <Content Include="bower_components\paper-dialog\.gitignore" />
+    <Content Include="bower_components\paper-dialog\demo.html" />
+    <Content Include="bower_components\paper-dialog\index.html" />
+    <Content Include="bower_components\paper-dialog\paper-dialog-transition.css" />
+    <Content Include="bower_components\paper-dialog\paper-dialog-transition.html" />
+    <Content Include="bower_components\paper-dialog\paper-dialog.css" />
+    <Content Include="bower_components\paper-dialog\paper-dialog.html" />
+    <Content Include="bower_components\paper-dropdown\demo.html" />
+    <Content Include="bower_components\paper-dropdown\index.html" />
+    <Content Include="bower_components\paper-dropdown\paper-dropdown.css" />
+    <Content Include="bower_components\paper-dropdown\paper-dropdown.html" />
+    <Content Include="bower_components\paper-elements\demo.html" />
+    <Content Include="bower_components\paper-elements\demos\core-toolbar.html" />
+    <Content Include="bower_components\paper-elements\metadata.html" />
+    <Content Include="bower_components\paper-elements\paper-elements.html" />
+    <Content Include="bower_components\paper-fab\demo.html" />
+    <Content Include="bower_components\paper-fab\demo2.html" />
+    <Content Include="bower_components\paper-fab\index.html" />
+    <Content Include="bower_components\paper-fab\metadata.html" />
+    <Content Include="bower_components\paper-fab\paper-fab.css" />
+    <Content Include="bower_components\paper-fab\paper-fab.html" />
+    <Content Include="bower_components\paper-focusable\demo.html" />
+    <Content Include="bower_components\paper-focusable\paper-focusable.html" />
+    <Content Include="bower_components\paper-icon-button\demo.html" />
+    <Content Include="bower_components\paper-icon-button\index.html" />
+    <Content Include="bower_components\paper-icon-button\metadata.html" />
+    <Content Include="bower_components\paper-icon-button\paper-icon-button.css" />
+    <Content Include="bower_components\paper-icon-button\paper-icon-button.html" />
+    <Content Include="bower_components\paper-icon-button\pulse-ink.css" />
+    <Content Include="bower_components\paper-input\.gitignore" />
+    <Content Include="bower_components\paper-input\demo.html" />
+    <Content Include="bower_components\paper-input\index.html" />
+    <Content Include="bower_components\paper-input\metadata.html" />
+    <Content Include="bower_components\paper-input\paper-input.css" />
+    <Content Include="bower_components\paper-input\paper-input.html" />
+    <Content Include="bower_components\paper-item\demo.html" />
+    <Content Include="bower_components\paper-item\index.html" />
+    <Content Include="bower_components\paper-item\metadata.html" />
+    <Content Include="bower_components\paper-item\paper-item.css" />
+    <Content Include="bower_components\paper-item\paper-item.html" />
+    <Content Include="bower_components\paper-menu-button\demo.html" />
+    <Content Include="bower_components\paper-menu-button\index.html" />
+    <Content Include="bower_components\paper-menu-button\metadata.html" />
+    <Content Include="bower_components\paper-menu-button\paper-menu-button-transition.css" />
+    <Content Include="bower_components\paper-menu-button\paper-menu-button-transition.html" />
+    <Content Include="bower_components\paper-menu-button\paper-menu-button.css" />
+    <Content Include="bower_components\paper-menu-button\paper-menu-button.html" />
+    <Content Include="bower_components\paper-progress\demo.html" />
+    <Content Include="bower_components\paper-progress\index.html" />
+    <Content Include="bower_components\paper-progress\metadata.html" />
+    <Content Include="bower_components\paper-progress\paper-progress.css" />
+    <Content Include="bower_components\paper-progress\paper-progress.html" />
+    <Content Include="bower_components\paper-radio-button\demo.html" />
+    <Content Include="bower_components\paper-radio-button\index.html" />
+    <Content Include="bower_components\paper-radio-button\metadata.html" />
+    <Content Include="bower_components\paper-radio-button\paper-radio-button.css" />
+    <Content Include="bower_components\paper-radio-button\paper-radio-button.html" />
+    <Content Include="bower_components\paper-radio-group\demo.html" />
+    <Content Include="bower_components\paper-radio-group\index.html" />
+    <Content Include="bower_components\paper-radio-group\metadata.html" />
+    <Content Include="bower_components\paper-radio-group\paper-radio-group.html" />
+    <Content Include="bower_components\paper-ripple\demo.html" />
+    <Content Include="bower_components\paper-ripple\index.html" />
+    <Content Include="bower_components\paper-ripple\metadata.html" />
+    <Content Include="bower_components\paper-ripple\paper-ripple.html" />
+    <Content Include="bower_components\paper-ripple\raw.html" />
+    <Content Include="bower_components\paper-shadow\demo.html" />
+    <Content Include="bower_components\paper-shadow\index.html" />
+    <Content Include="bower_components\paper-shadow\metadata.html" />
+    <Content Include="bower_components\paper-shadow\paper-shadow.css" />
+    <Content Include="bower_components\paper-shadow\paper-shadow.html" />
+    <Content Include="bower_components\paper-slider\demo.html" />
+    <Content Include="bower_components\paper-slider\index.html" />
+    <Content Include="bower_components\paper-slider\metadata.html" />
+    <Content Include="bower_components\paper-slider\paper-slider.css" />
+    <Content Include="bower_components\paper-slider\paper-slider.html" />
+    <Content Include="bower_components\paper-tabs\demo.html" />
+    <Content Include="bower_components\paper-tabs\index.html" />
+    <Content Include="bower_components\paper-tabs\metadata.html" />
+    <Content Include="bower_components\paper-tabs\paper-tab.css" />
+    <Content Include="bower_components\paper-tabs\paper-tab.html" />
+    <Content Include="bower_components\paper-tabs\paper-tabs.css" />
+    <Content Include="bower_components\paper-tabs\paper-tabs.html" />
+    <Content Include="bower_components\paper-toast\demo.html" />
+    <Content Include="bower_components\paper-toast\index.html" />
+    <Content Include="bower_components\paper-toast\metadata.html" />
+    <Content Include="bower_components\paper-toast\paper-toast.css" />
+    <Content Include="bower_components\paper-toast\paper-toast.html" />
+    <Content Include="bower_components\paper-toggle-button\demo.html" />
+    <Content Include="bower_components\paper-toggle-button\index.html" />
+    <Content Include="bower_components\paper-toggle-button\metadata.html" />
+    <Content Include="bower_components\paper-toggle-button\paper-toggle-button.css" />
+    <Content Include="bower_components\paper-toggle-button\paper-toggle-button.html" />
+    <Content Include="bower_components\platform\platform.js" />
+    <Content Include="bower_components\polymer\layout.html" />
+    <Content Include="bower_components\polymer\polymer.html" />
+    <Content Include="bower_components\polymer\polymer.js" />
+    <Content Include="bower_components\sampler-scaffold\demo.html" />
+    <Content Include="bower_components\sampler-scaffold\demos\checkbox.html" />
+    <Content Include="bower_components\sampler-scaffold\demos\color.html" />
+    <Content Include="bower_components\sampler-scaffold\demos\radio.html" />
+    <Content Include="bower_components\sampler-scaffold\demos\range.html" />
+    <Content Include="bower_components\sampler-scaffold\demos\string.html" />
+    <Content Include="bower_components\sampler-scaffold\index.html" />
+    <Content Include="bower_components\sampler-scaffold\sampler-scaffold.css" />
+    <Content Include="bower_components\sampler-scaffold\sampler-scaffold.html" />
+    <Content Include="bower_components\web-animations-js\.gitignore" />
+    <Content Include="bower_components\web-animations-js\.gitmodules" />
+    <Content Include="bower_components\web-animations-js\test\bootstrap.js" />
+    <Content Include="bower_components\web-animations-js\test\img\error.png" />
+    <Content Include="bower_components\web-animations-js\test\img\success.png" />
+    <Content Include="bower_components\web-animations-js\test\img\unknown.png" />
+    <Content Include="bower_components\web-animations-js\test\perf\balls-add-compositing.html" />
+    <Content Include="bower_components\web-animations-js\test\perf\balls-replace-compositing.html" />
+    <Content Include="bower_components\web-animations-js\test\perf\perf.js" />
+    <Content Include="bower_components\web-animations-js\test\perf\updating-inline-style-during-animation.html" />
+    <Content Include="bower_components\web-animations-js\test\test-generator.html" />
+    <Content Include="bower_components\web-animations-js\test\test-results-post.html" />
+    <Content Include="bower_components\web-animations-js\test\test-runner.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-box-shadow-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-box-shadow.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-calc-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-calc.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-change-playback-rate-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-circular-path-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-circular-path.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-color-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-color-names-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-color-names.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-color.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-composite-transforms-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-composite-transforms.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-compositor-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-compositor.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-delay-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-delay.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-element-animate-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-element-animate.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-fill-values-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-fill-values.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-font-weight-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-font-weight.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-initial-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-initial.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style-fallback-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style-fallback.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style-methods-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style-methods.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-inline-style.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-integer-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-integer.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iteration-start-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iteration-start.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-alternate-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-alternate-holes-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-alternate-holes.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-alternate.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-basic-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-basic.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-fill-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-iterations-fill.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-keyframe-creation-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-keyframe-creation.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-keyframe-easing-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-keyframe-easing.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-length-units-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-length-units.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-matrix-transforms-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-matrix-transforms.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-motion-path-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-motion-path.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-non-numeric-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-non-numeric.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-parent-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-parent.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-partial-keyframes-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-partial-keyframes.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-path-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-path.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-pause-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-pause.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-perspective-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-perspective-origin-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-perspective-origin.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-perspective.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-playback-rate-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-playback-rate.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-position-list-type-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-rectangle-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-rectangle.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-reparent-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-reparent.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-seq-speed-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-seq-speed.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-shorthand-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-shorthand.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-start-time-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-start-time-iterations-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-start-time-iterations.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-start-time.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-anim-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-anim.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-circle-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-circle.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-color-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-svg-color.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-text-shadow-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-text-shadow.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-timing-functions-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-timing-functions.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-to-animation-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-to-animation.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-3d-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-3d.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-functions-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-functions.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-origin-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-origin.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-primitives-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-primitives.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-units-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-transform-units.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-visibility-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-visibility.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-wrapping-bug-checks.js" />
+    <Content Include="bower_components\web-animations-js\test\testcases\auto-test-wrapping-bug.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\background.png" />
+    <Content Include="bower_components\web-animations-js\test\testcases\disabled-auto-test-change-playback-rate.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\disabled-auto-test-position-list-type.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\disabled-media.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\disabled-test-compositing-order.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\impl-test-deprecation.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\impl-test-from-css-value.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\impl-test-paced-timing-function.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\impl-test-totimelinetime.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\impl-unit-test-position-type.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\manual-test-add-player-onend.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\manual-test-preset-timings.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\manual-test-step.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\small.mp4" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-bounds.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-document-timeline.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-dynamic-load.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-fill-auto.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-getcurrent.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-keyframe-animation-effect.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-keyframe-composite-operation.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-null-target.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-pause-for-testing.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-player-addeventlistener.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-player-cleanup.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-player-finish-event.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-player-sort.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-player.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-pseudo-element-reference.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-repeated-pause.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-restart.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-reversed-player-active-phase.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-rotation-not-reversed.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\test-update-state.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-clone.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-delay.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-dom-operations.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-duration.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-get-siblings.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-modify-timing-params.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-null-effect.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-set-parent.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-testharness-failure.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-testharness.html" />
+    <Content Include="bower_components\web-animations-js\test\testcases\unit-test-unpause.html" />
+    <Content Include="bower_components\web-animations-js\test\testharness_timing.css" />
+    <Content Include="bower_components\web-animations-js\tools\python\requirements.txt" />
+    <Content Include="bower_components\web-animations-js\tutorial\basic-animations\basic-animation-exercise-1.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\basic-animations\basic-animation.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\iframe-contents.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\jquery.js" />
+    <Content Include="bower_components\web-animations-js\tutorial\page-load.js" />
+    <Content Include="bower_components\web-animations-js\tutorial\parallel\parallel-exercise-1.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\parallel\parallel.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\sample-tutorial.html" />
+    <Content Include="bower_components\web-animations-js\tutorial\try-it-yourself.js" />
+    <Content Include="bower_components\web-animations-js\tutorial\tutorial-style.css" />
+    <Content Include="bower_components\web-animations-js\tutorial\tutorial-testing.js" />
+    <Content Include="bower_components\web-animations-js\web-animations.js" />
+    <Content Include="Demo1.html" />
+    <Content Include="Demo2.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bower_components\web-animations-js\test\browserdetect\" />
+    <Folder Include="bower_components\web-animations-js\test\coverage\escodegen\" />
+    <Folder Include="bower_components\web-animations-js\test\coverage\esprima\" />
+    <Folder Include="bower_components\web-animations-js\test\coverage\istanbul\" />
+    <Folder Include="bower_components\web-animations-js\test\testharness\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62029</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62029/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
