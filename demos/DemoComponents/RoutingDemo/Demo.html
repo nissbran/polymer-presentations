@@ -12,7 +12,7 @@
     <link rel="import" href="bower_components/core-pages/core-pages.html" />
     <link rel="import" href="bower_components/flatiron-director/flatiron-director.html">
 
-    <style>
+    <style shim-shadowdom>
         core-item {
             cursor: pointer !important;
         }
@@ -27,7 +27,7 @@
             }
 
         core-scaffold::shadow core-header-panel {
-            background-color: white;
+            background-color: white !important;
         }
 
         core-submenu::shadow #submenu {

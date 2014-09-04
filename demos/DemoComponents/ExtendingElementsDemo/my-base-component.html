@@ -1,0 +1,22 @@
+﻿<link rel="import" href="bower_components/polymer/polymer.html" />
+
+<polymer-element name="my-base-component">
+    <template>
+        <style>
+            #content {
+                color: darkorange;
+                background-color: black;
+            }
+        </style>
+        <h2>
+            <content select=".header"></content>
+        </h2>
+        <!-- Use ids to stop style leakage -->
+        <p id="content">
+            <content select=".content"></content>
+        </p>
+    </template>
+    <script>
+        Polymer({})
+    </script>
+</polymer-element>

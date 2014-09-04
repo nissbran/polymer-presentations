@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatedPagesDemo", "Animat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingCoreAjaxDemo", "UsingCoreAjaxDemo\UsingCoreAjaxDemo.csproj", "{CBCF9A21-E9DB-430B-AF9E-629ECE219732}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendingElementsDemo", "ExtendingElementsDemo\ExtendingElementsDemo.csproj", "{B02FE3B9-7EA0-4A39-9E31-7C84AC587E5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CBCF9A21-E9DB-430B-AF9E-629ECE219732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBCF9A21-E9DB-430B-AF9E-629ECE219732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBCF9A21-E9DB-430B-AF9E-629ECE219732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02FE3B9-7EA0-4A39-9E31-7C84AC587E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02FE3B9-7EA0-4A39-9E31-7C84AC587E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02FE3B9-7EA0-4A39-9E31-7C84AC587E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02FE3B9-7EA0-4A39-9E31-7C84AC587E5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

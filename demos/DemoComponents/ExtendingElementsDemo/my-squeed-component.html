@@ -1,0 +1,22 @@
+﻿<link rel="import" href="my-base-component.html" />
+
+<polymer-element name="my-squeed-component" extends="my-base-component">
+    <template>
+        <!-- This doesnt work. Shadow tag only render my-base-component <shadow></shadow> -->
+        <shadow>Squeed!</shadow>
+        <p>
+            Test
+        </p>
+    </template>
+    <script>
+        Polymer({
+            ready: function () {
+                this.super();
+
+                // This does work, but it will remove what is currently in innerHTML
+                this.innerHTML = "<span class='header'>Squeed!</span>" + 
+                                 "<span class='content'>This is content</span>"; 
+            }
+        })
+    </script>
+</polymer-element>

@@ -47,7 +47,6 @@
             <section vertical layout>
                 <div id="container" flex horizontal wrap layout start hero-p>
                     <template repeat="{{item in items}}">
-
                         <div on-tap="{{selectView}}"
                              hero-id="item-{{item.id}}"
                              hero?="{{$.pages.selected === item.id || lastSelected === item.id}}">
