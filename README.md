@@ -8,11 +8,11 @@ This repo contains presentation demo code for [polymer](http://www.polymer-proje
 ### Prerequisites
 
 All examples are created using visual studio. It is possible to use the html and polymer parts without it.
-But bower and npm is essential to restore polymer for the examples.
+But bower and npm is essential to restore and download polymer.
 
 Prerequisites:
 * NPM [Node Packaged Modules](https://www.npmjs.org/)
-* Bower (npm install bower -g)
+* Bower (npm install -g bower)
 * GIT
 
 [link to how to install bower](http://bardevblog.wordpress.com/2013/10/26/a-simple-tutorial-of-setting-up-and-using-bower-on-windows/)
