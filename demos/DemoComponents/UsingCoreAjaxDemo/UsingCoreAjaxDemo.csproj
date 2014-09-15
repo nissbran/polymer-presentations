@@ -72,6 +72,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower_components\core-ajax\core-ajax.html" />
+    <Content Include="bower_components\core-ajax\core-xhr.html" />
+    <Content Include="bower_components\core-ajax\demo.html" />
+    <Content Include="bower_components\core-ajax\index.html" />
+    <Content Include="bower_components\core-ajax\metadata.html" />
     <Content Include="packages.config" />
     <Content Include="bower.json" />
     <Content Include="bower_components\core-component-page\.bower.json" />
@@ -87,6 +92,9 @@
     <Content Include="bower_components\polymer\build.log" />
     <Content Include="bower_components\polymer\polymer.js.map" />
     <Content Include="bower_components\polymer\README.md" />
+    <Content Include="bower_components\core-ajax\.bower.json" />
+    <Content Include="bower_components\core-ajax\bower.json" />
+    <Content Include="bower_components\core-ajax\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
